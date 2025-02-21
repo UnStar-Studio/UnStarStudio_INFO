@@ -4,20 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UnStar Studio</title>
-    <!-- Подключение шрифта Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
         *:hover {
-            display: none;
+            animation: dolbitnamana 0.1s infinite;
         }
+
+        body:hover::before {
+            position: absolute;
+            background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.comic.studio%2Fimages%2F39335%2Fcharacters%2F67167858f76c2e8261382bbecc042648.png%3Ffilename%3D1000024389.png&f=1&nofb=1&ipt=76c203d2c3bbf98648a89ea4fb1241f2a7aaa9c9c6cae602650b0677d965b1e4&ipo=images");
+            height: 100%;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 50px;
+            transform: scale(50);
+            animation: ebatLobotomy 2s infinite steps(2) !important;
+        }
+
+        @keyframes dolbitnamana {
+            10%, 90% { transform: translate(-1px, 2px); }
+            20%, 80% { transform: translate(2px, -3px); }
+            30%, 50%, 70% { transform: translateX(-4px, 1px); }
+            from {
+              filter: brightness(1);
+              transform: translate(0, 0);
+            }
+            to {
+              transform: translate(0, 0);
+              filter: brightness(2);
+            }
+        }
+
         * {
+            font-family: 'Lobster', sans-serif !important;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             background: linear-gradient(135deg, #0d1b2a, #1b263b);
             color: #ffffff;
@@ -37,6 +65,23 @@
             background-size: 50px 50px;
             animation: floatCircles 15s linear infinite;
             z-index: 0;
+        }
+
+        @keyframes ebatLobotomy {
+            0% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+            100% { filter: hue-rotate(360deg); }
+            0% { transform: translate(10vh, 10vh) rotate(0deg); }
+            10% { transform: translate(-10vh, -20vh) rotate(-5deg); }
+            20% { transform: translate(-30vh, 00vh) rotate(5deg); }
+            30% { transform: translate(30vh, 20vh) rotate(0deg); }
+            40% { transform: translate(10vh, -10vh) rotate(5deg); }
+            50% { transform: translate(-10vh, 20vh) rotate(-5deg); }
+            60% { transform: translate(-30vh, 10vh) rotate(0deg); }
+            70% { transform: translate(30vh, 10vh) rotate(-5deg); }
+            80% { transform: translate(-10vh, -10vh) rotate(5deg); }
+            90% { transform: translate(10vh, 20vh) rotate(0deg); }
+            100% { transform: translate(10vh, -20vh) rotate(-5deg); }
         }
 
         @keyframes floatCircles {
