@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnStar Studio</title>
+    <!-- Подключение шрифта Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Анимированный фон из кружочков */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10%);
+            background-size: 50px 50px;
+            animation: floatCircles 15s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes floatCircles {
+            0% { transform: translateY(0); opacity: 0.6; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Заголовок и логотип с декором */
+        .header-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background: url('https://via.placeholder.com/150') no-repeat center;
+            background-size: contain;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Векторные фигуры (декорации) */
+        .decor {
+            position: absolute;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            animation: float 5s ease-in-out infinite;
+            transition: transform 0.3s ease;
+            z-index: 0;
+        }
+
+        .decor:hover {
+            transform: scale(1.2);
+        }
+
+        .decor1 { width: 80px; height: 80px; top: 20px; left: 20%; }
+        .decor2 { width: 60px; height: 60px; top: 120px; left: 10%; }
+        .decor3 { width: 100px; height: 100px; top: 50px; right: 15%; }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Описание студии */
+        .about {
+            max-width: 600px;
+            margin-left: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #1d2ecc, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Разделитель перед проектами */
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 40px 0;
+            z-index: 1;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            z-index: 0;
+        }
+
+        .divider span {
+            background: #0d1b2a;
+            padding: 0 20px;
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }
+
+        /* Проекты */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #415a77, #778da9);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            animation: sway 1s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .project-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .project-info p {
+            font-size: 14px;
+            color: #d0d0d0;
+        }
+
+        .status {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .released {
+            background: #4ecdc4;
+        }
+
+        .in-progress {
+            background: #f9d423;
+            color: #1a1a2e;
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(90deg, #0a141f, #1a2636); /* Более темный градиент */
+            padding: 40px 20px; /* Увеличенная высота */
+            text-align: center;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #4ecdc4;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-section, .divider, .projects, footer {
+            animation: fadeIn 1s ease-in forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Логотип и описание -->
+        <section class="header-section">
+            <img class="logo" src ="studio_logo.jpg">
+            <div class="decor decor1"></div>
+            <div class="decor decor2"></div>
+            <div class="decor decor3"></div>
+            <div class="about">
+                <h1>UnStar Studio</h1>
+                <p>
+                    UnStar Studio — моя игровая студия, основанная в марте 2024 года. 
+                    Я являюсь её создателем и занимаюсь разработкой игр с октября 2024 года. 
+                    На данный момент я выпустил 3 игры, а также работаю над множеством других проектов. 
+                    
+                </p>
+            </div>
+        </section>
+
+        <!-- Разделитель -->
+        <div class="divider">
+            <span>Проекты</span>
+        </div>
+
+        <!-- Проекты -->
+        <section class="projects">
+            <div class="project-card">
+                <img src="sfera.png" alt="Game 1">
+                <div class="project-info">
+                    <h3>Слияние сфер</h3>
+                    <p>В игре надо найти одинаковых персонажей и совместить их.</p>
+                    <span class="status in-progress">Выпущена</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="SandBox.png" alt="Game 2">
+                <div class="project-info">
+                    <h3>SandBox</h3>
+                    <p>В игре надо кидать предметы и играть.</p>
+                    <span class="status released">Закрыта</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="horror.jpg" alt="Game 3">
+                <div class="project-info">
+                    <h3>Хоррор к новому году</h3>
+                    <p>В игре нам надо ходить по лесу и искать подарки.</p>
+                    <span class="status released">Закрыта</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="horror2.png" alt="Game 4">
+                <div class="project-info">
+                    <h3>Хоррор побег из дома</h3>
+                    <p>В игре по сюжету вас заперли в доме из которого надо сбежать</p>
+                    <span class="status released">Закрыт</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Связаться с UnStar Studio:</p>
+            <p>
+                <a href="#">GitHub</a> | 
+                <a href="#">itch.io</a> | 
+                <a href="#">Email: unstarstudio@example.com</a>
+            </p>
+            <p>© 2025 UnStar Studio. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
