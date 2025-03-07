@@ -3,211 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnStar Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" href ="styles.css">
+    <title>РЕШАЙся</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-    <div class="container">
-        <section class="header-section">
-            <img class="logo" src="studio_logo.jpg">
-            <div class="decor decor1"></div>
-            <div class="decor decor2"></div>
-            <div class="decor decor3"></div>
-            <div class="decor decor4"></div>
-            <div class="decor decor5"></div>
-            
-            <div class="about">
-                <h1>UnStar Studio</h1>
-                <p>
-                    UnStar Studio — моя игровая студия, основанная в марте 2024 года. 
-                    Я являюсь её создателем и занимаюсь разработкой игр с октября 2024 года. 
-                    На данный момент я выпустил 3 игры, а также работаю над множеством других проектов. 
-                </p>
+    <div class="header">
+        <div class="header-container">
+            <span class="time">РЕШАЙся</span>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск видео...">
             </div>
-        </section>
-
-        <div class="divider">
-            <span>Проекты</span>
-        </div>
-
-        <section class="projects">
-            <div class="project-card" data-telegram="https://t.me/post1" data-description="Увлекательная головоломка, где игроку предстоит соединять одинаковых персонажей-шаров, чтобы пройти все уровни. Игра включает более 50 уровней и систему достижений.">
-                <img src="sfera.png" alt="Game 1">
-                <div class="project-info">
-                    <h3>Слияние сфер</h3>
-                    <p>В игре надо найти одинаковых персонажей и совместить их.</p>
-                    <span class="status in-progress">Выпущена</span>
-                </div>
-                <button class="like-btn">❤️</button>
+            <div class="nav-buttons">
+                <button class="active" data-category="donm">#ДОНМ</button>
+                <button data-category="dvizhenie">#Движение первых</button>
+                <button data-category="love"><3</button>
+                <button data-category="techzone">#TechZone</button>
+                <button data-category="1542">#1542</button>
             </div>
-            <div class="project-card" data-telegram="https://t.me/post2" data-description="Песочница с физическим движком, где игроки могут экспериментировать с различными объектами и их взаимодействием. Проект был закрыт из-за смены приоритетов разработки.">
-                <img src="SandBox.png" alt="Game 2">
-                <div class="project-info">
-                    <h3>SandBox</h3>
-                    <p>В игре надо кидать предметы и играть.</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post3" data-description="Атмосферный хоррор, действие которого происходит в заснеженном лесу. Игроку предстоит искать подарки, избегая встречи с таинственным существом. Проект закрыт после новогоднего сезона.">
-                <img src="horror.jpg" alt="Game 3">
-                <div class="project-info">
-                    <h3>Хоррор к новому году</h3>
-                    <p>В игре нам надо ходить по лесу и искать подарки.</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post4" data-description="Напряженный хоррор с элементами головоломок. Игроку нужно найти способ выбраться из запертого дома, решая загадки и избегая опасности. Проект завершен.">
-                <img src="horror2.png" alt="Game 4">
-                <div class="project-info">
-                    <h3>Хоррор побег из дома</h3>
-                    <p>В игре по сюжету вас заперли в доме из которого надо сбежать</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post1" data-description="Увлекательная головоломка, где игроку предстоит соединять одинаковых персонажей-шаров, чтобы пройти все уровни. Игра включает более 50 уровней и систему достижений.">
-                <img src="sfera.png" alt="Game 1">
-                <div class="project-info">
-                    <h3>Слияние сфер</h3>
-                    <p>В игре надо найти одинаковых персонажей и совместить их.</p>
-                    <span class="status in-progress">Выпущена</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post2" data-description="Песочница с физическим движком, где игроки могут экспериментировать с различными объектами и их взаимодействием. Проект был закрыт из-за смены приоритетов разработки.">
-                <img src="SandBox.png" alt="Game 2">
-                <div class="project-info">
-                    <h3>SandBox</h3>
-                    <p>В игре надо кидать предметы и играть.</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post3" data-description="Атмосферный хоррор, действие которого происходит в заснеженном лесу. Игроку предстоит искать подарки, избегая встречи с таинственным существом. Проект закрыт после новогоднего сезона.">
-                <img src="horror.jpg" alt="Game 3">
-                <div class="project-info">
-                    <h3>Хоррор к новому году</h3>
-                    <p>В игре нам надо ходить по лесу и искать подарки.</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post4" data-description="Напряженный хоррор с элементами головоломок. Игроку нужно найти способ выбраться из запертого дома, решая загадки и избегая опасности. Проект завершен.">
-                <img src="horror2.png" alt="Game 4">
-                <div class="project-info">
-                    <h3>Хоррор побег из дома</h3>
-                    <p>В игре по сюжету вас заперли в доме из которого надо сбежать</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post1" data-description="Увлекательная головоломка, где игроку предстоит соединять одинаковых персонажей-шаров, чтобы пройти все уровни. Игра включает более 50 уровней и систему достижений.">
-                <img src="sfera.png" alt="Game 1">
-                <div class="project-info">
-                    <h3>Слияние сфер</h3>
-                    <p>В игре надо найти одинаковых персонажей и совместить их.</p>
-                    <span class="status in-progress">Выпущена</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post2" data-description="Песочница с физическим движком, где игроки могут экспериментировать с различными объектами и их взаимодействием. Проект был закрыт из-за смены приоритетов разработки.">
-                <img src="SandBox.png" alt="Game 2">
-                <div class="project-info">
-                    <h3>SandBox</h3>
-                    <p>В игре надо кидать предметы и играть.</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post3" data-description="Атмосферный хоррор, действие которого происходит в заснеженном лесу. Игроку предстоит искать подарки, избегая встречи с таинственным существом. Проект закрыт после новогоднего сезона.">
-                <img src="horror.jpg" alt="Game 3">
-                <div class="project-info">
-                    <h3>Хоррор к новому году</h3>
-                    <p>В игре нам надо ходить по лесу и искать подарки.</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-            <div class="project-card" data-telegram="https://t.me/post4" data-description="Напряженный хоррор с элементами головоломок. Игроку нужно найти способ выбраться из запертого дома, решая загадки и избегая опасности. Проект завершен.">
-                <img src="horror2.png" alt="Game 4">
-                <div class="project-info">
-                    <h3>Хоррор побег из дома</h3>
-                    <p>В игре по сюжету вас заперли в доме из которого надо сбежать</p>
-                    <span class="status released">Закрыта</span>
-                </div>
-                <button class="like-btn">❤️</button>
-            </div>
-        </section>
-    </div>
-
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <button class="close-btn">×</button>
-            <img id="modalImage" src="" alt="Project">
-            <h2 id="modalTitle"></h2>
-            <p class="description" id="modalDescription"></p>
-            <span id="modalStatus" class="status"></span>
-            <a href="#" id="modalTelegram" class="telegram-btn" target="_blank">Подробнее в Telegram</a>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>© 2025 UnStar Studio. Все права защищены.</p>
-            <p>jk</p>
+    <div id="video" class="content active" style="padding-top: 250px;">
+        <div class="video-grid" id="video-grid">
+            <a href="https://www.youtube.com/watch?v=example1" target="_blank" class="video-card" data-category="donm">
+                <img src="assets/header_logo.jpg" alt="Превью">
+                <div class="video-card-content">
+                    <h3>sdfsd</h3>
+                    <p>sdfsd</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=example2" target="_blank" class="video-card" data-category="dvizhenie">
+                <img src="assets/header_logo.jpg" alt="Превью">
+                <div class="video-card-content">
+                    <h3>sfsdf</h3>
+                    <p>sdfsdfs</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=example3" target="_blank" class="video-card" data-category="love">
+                <img src="assets/header_logo.jpg" alt="Превью">
+                <div class="video-card-content">
+                    <h3>1</h3>
+                    <p>ffffsdfsfsf</p>
+                </div>
+            </a>
         </div>
-    </footer>
+    </div>
 
-    <script>
-        document.querySelectorAll('.like-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const card = btn.closest('.project-card');
-                card.classList.toggle('liked');
-                btn.classList.toggle('liked');
-            });
-        });
+    <div id="settings" class="content">
+        <div class="settings-container">
+            <h1>Настройки</h1>
+            <div class="settings-section">
+                <h2>Тема</h2>
+                <label>
+                    <input type="checkbox" id="theme-toggle"> Темная тема
+                </label>
+            </div>
+            <div class="settings-section">
+                <h2>Игры</h2>
+                <a href="https://unstar-studio.github.io/reshaysyaKombat/#" target="_blank" class="game-btn">
+                    <i class="fas fa-gamepad"></i> Решайся Kombat
+                </a>
+            </div>
+            <div class="settings-section">
+                <h2>Интересные ссылки)</h2>
+                <ul class="contacts">
+                    <li><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@reshaysya" target="_blank">YouTube: @reshaysya</a></li>
+                    <li><i class="fab fa-telegram"></i> <a href="https://t.me/reshaysyaa" target="_blank">Telegram: @reshaysyaa</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:emelyanovaa@sch1542.r">Email: emelyanovaa@sch1542.r</a></li>
+                </ul>
+            </div>
+            <div class="creator-section">
+                <h2>Создатель<\></h2>
+                <p>UnStar Studio</p>
+                <a href="https://t.me/StarGamesOne" target="_blank">Telegramm: UnStar Studio</a>
+            </div>
+        </div>
+    </div>
 
-        const modal = document.getElementById('projectModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDescription = document.getElementById('modalDescription');
-        const modalStatus = document.getElementById('modalStatus');
-        const modalTelegram = document.getElementById('modalTelegram');
-        const closeBtn = document.querySelector('.close-btn');
+    <div id="about" class="content" style="padding-top: 250px;">
+        <h1>О проекте «РЕШАЙся»</h1>
+        <p style="font-weight: bold;">«РЕШАЙся» — образовательный проект ГБОУ Школа №1542 для учеников, учителей и родителей. Подписывайся и решайся быть в команде профессионалов вместе с нами! :3</p>
+    </div>
 
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const img = card.querySelector('img').src;
-                const title = card.querySelector('h3').textContent;
-                const description = card.getAttribute('data-description');
-                const statusText = card.querySelector('.status').textContent;
-                const statusClass = card.querySelector('.status').className;
-                const telegramLink = card.getAttribute('data-telegram');
+    <div class="footer">
+        <button class="nav-btn" data-target="settings"><i class="fas fa-cog"></i></button>
+        <button class="nav-btn active" data-target="video"><img src="assets/header_logo.jpg" alt="Видео"></button>
+        <button class="nav-btn" data-target="about"><i class="fas fa-info-circle"></i></button>
+    </div>
 
-                modalImage.src = img;
-                modalTitle.textContent = title;
-                modalDescription.textContent = description;
-                modalStatus.textContent = statusText;
-                modalStatus.className = `status ${statusClass.split(' ')[1]}`;
-                modalTelegram.href = telegramLink;
-
-                modal.style.display = 'flex';
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    </script>
+    <script src = "script.js"></script>
 </body>
 </html>
